@@ -46,10 +46,17 @@
     weekday[6] = "Sábado";
 
     
-    var today = new Date();
-    var hrs = today.getHours();
-    var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+  var lesserThen = (param) => {
+    if (param < 10) {
+      return `0${param}`;
+    } else {
+      return param;
+    }
+  }
+
+  var today = new Date()
+  var hrs = today.getHours()
+  var date = `${lesserThen(today.getDate())}/${lesserThen(today.getMonth()+ 1)}/${today.getFullYear()}`
 
     var greet;
 

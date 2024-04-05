@@ -36,17 +36,9 @@
   <div id="lbl"></div>
 </body>
   <script>
-    var weekday = new Array(7);
-    weekday[0] = "Domingo";
-    weekday[1] = "Segunda";
-    weekday[2] = "Terça";
-    weekday[3] = "Quarta";
-    weekday[4] = "Quinta";
-    weekday[5] = "Sexta";
-    weekday[6] = "Sábado";
-
+  var weekday = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
     
-  var lesserThen = (param) => {
+  function lesserThen (param) {
     if (param < 10) {
       return `0${param}`;
     } else {
@@ -54,9 +46,10 @@
     }
   }
 
-  var today = new Date()
-  var hrs = today.getHours()
-  var date = `${lesserThen(today.getDate())}/${lesserThen(today.getMonth()+ 1)}/${today.getFullYear()}`
+  var today = new Date();
+  var hrs = today.getHours();
+  var dayOfWeek = weekday[today.getDay()]
+  var date = `${dayOfWeek}\n${lesserThen(today.getDate())}/${lesserThen(today.getMonth() + 1)}/${today.getFullYear()}`
 
     var greet;
 
